@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio</title>
+  </head>
+  <body>
+    <h1>Desafio</h1>
+  </body>
+  <script>
+    let num, acumulador, ultimoSorteio, aux;
+    num = [0, 0, 0];
+    acumulador = 0;
+    ultimoSorteio = [0, 0, 0];
+    aux = [0, 0, 0];
+    for (acumulador; acumulador < 3; ) {
+      sort();
+      function sort() {
+        ultimoSorteio[0] == 0
+          ? null
+          : console.log(`Ultimos Números Sorteados: ${ultimoSorteio}`);
+        ultimoSorteio = num;
+        for (i = 0; i < num.length; i++) {
+          aux[i] = ultimoSorteio[i];
+          num[i] = parseInt(Math.random() * 3) + 1;
+        }
+        console.log(`Novo Sorteio: ${num}`);
+        if (num[0] == num[1] && num[1] == num[2]) {
+          acumulador++;
+          console.log(`Porta ${acumulador}: Aberta`);
+          console.log(`Quantas portas já foram abertas? ${acumulador}`);
+        } else if (aux[0] == num[0] && aux[1] == num[1] && aux[2] == num[2]) {
+          acumulador++;
+          console.log(`Porta ${acumulador}: Aberta`);
+          console.log(`Quantas portas já foram abertas? ${acumulador}`);
+        } else {
+          console.log("Tente novamente");
+        }
+      }
+    }
+    console.log("OK, você venceu");
+  </script>
+</html>
